@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Boggle Solver
+=============
 
-## Available Scripts
+Assignment
+----------
 
-In the project directory, you can run:
+Create a web-based solver for Boggle. Users should be able to enter their boggle “board” into the webapp and have the app “solve” the board by listing out all of the valid words contained on the board.
 
-### `npm start`
+You may use any publicly available language, libraries, tools, and information resources. We do ask that you come prepared to discuss what resources you used, and that the final result reflects your own work and thinking. We’re especially interested in seeing how you approach the algorithm for solving the board, so please avoid using a pre-built library to solve that piece. Please be sure to attribute any resources that contributed ideas or code to your solution. When you’re done, please send along the source code and (if possible) a live URL.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+I’ve gotten feedback from a couple of folks recently that they wished they had a little more clarity on what specifically we’re looking for in this assignment. So off the top of my head here are a few things we’ll be interested in seeing:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- How performant is the solution? Are users having to wait a long time to see their results?
+- How easy is it to understand or maintain the code?
+- How usable/pleasant is the interface? Might Boggle players actually want to use this app?
+- How scalable and versatile is the application? - Could you plug in a different dictionary? Alphabet? Would it continue to perform well on a 5x5 or 6x6 board?
 
-### `npm test`
+In 4 hours, we certainly don’t expect that anyone would be able to ace every one of the above, but we’d love to see a solution that shows off your strengths in some of the above areas and performs reasonably in the others.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+Rules
+-----
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- 4x4 board
+- Adjacent characters (horizontal, vertical, diagonal)
+- >= 3 letters
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+TODO
+----
 
-### `npm run eject`
+- Basic interface for creating the board / grid
+- Dictionary for testing words
+- Solution generation
+- Deploy
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+References
+----------
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- <https://en.wikipedia.org/wiki/Boggle>

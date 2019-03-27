@@ -18,54 +18,27 @@ I’ve gotten feedback from a couple of folks recently that they wished they had
 In 4 hours, we certainly don’t expect that anyone would be able to ace every one of the above, but we’d love to see a solution that shows off your strengths in some of the above areas and performs reasonably in the others.
 
 
-Rules
------
-
-- 4x4 board
-- Adjacent characters (horizontal, vertical, diagonal)
-- >= 3 letters
-
-
-TODO
-----
-
-- Allow users to edit the board
-- Deploy
-
-- Downcase all letters
-- Prettier error handling on invalid board
-- Responsive
-- Clear / Reset button for solutions
-- Organize CSS better
-
-
-Notes
------
+Discussion / Notes
+------------------
 
 - Not using tests due to time constraints, might add if have time
 - Just using basic CSS with BEM, no time for more advanced organization/tools
 - How much do we care about browser compatibility? (CSS Flex, Map, etc)
-- Javascript Map: BTree vs Hash?
-
-
-Discussion Points
------------------
-
 - Tradeoffs of backend vs front-end only
 - Avoiding blocking in main thread (worker, etc)
 - Duplicates (not revisiting letters, but multiple paths for the same word)
-- Using a Trie for the dictionary (to shortcut graph traversal)
-- What I Didn't Do
+- What I didn't do, but wanted to (time constraints):
   * Responsive
-  * Unit / integration testing
+  * Using a Trie for the dictionary (to shortcut graph traversal)
+  * Better UI for editing board (`prompt` is pretty gross)
+  * Better UI all-around
 
 
-
-References
-----------
+References / Resources
+----------------------
 
 - <https://en.wikipedia.org/wiki/Boggle>
-- MDN for Javascript docs where appropriate (inevitable *shrug*)
+- [MDN for Javascript docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 - [Create React App](https://facebook.github.io/create-react-app/)
 - [NodeJS File documentation](https://nodejs.org/api/fs.html)
 - [NodeJS Readline documentation](https://nodejs.org/api/readline.html)

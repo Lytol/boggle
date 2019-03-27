@@ -30,7 +30,6 @@ TODO
 ----
 
 - Generate random characters for board on start
-- Show the board
 - Allow users to edit the board
 - Dictionary for testing words
 - Solution generation
@@ -38,6 +37,7 @@ TODO
 
 - Prettier error handling on invalid board
 - Responsive
+- Clear / Reset button for solutions
 
 
 Notes
@@ -52,3 +52,4 @@ References
 ----------
 
 - <https://en.wikipedia.org/wiki/Boggle>
+- MDN for Javascript docs where appropriate (inevitable *shrug*)

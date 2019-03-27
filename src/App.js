@@ -21,8 +21,9 @@ class App extends Component {
     const { size, values } = this.state;
 
     const solver = new Solver(size, values);
+    const words = solver.words();
 
-    this.setState({ solutions: solver.words() });
+    console.log(words);
   }
 
   render() {

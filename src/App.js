@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Board from './components/Board.js';
 import Solutions from './components/Solutions.js';
 import Solver from './utils/Solver.js';
-import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -15,6 +14,7 @@ class App extends Component {
     };
 
     this.solve = this.solve.bind(this);
+    this.edit = this.edit.bind(this);
   }
 
   solve() {
@@ -28,21 +28,41 @@ class App extends Component {
       words.push(word);
     });
 
-    console.log(`Words found: ${words.length}`);
-
     this.setState({ solutions: words });
+  }
+
+  edit() {
+    const { size } = this.state;
+
+    const input = window.prompt(`Enter ${size*size} letters (left-to-right, top-to-bottom) for the board`);
+
+    if (!input || input.length !== size*size) {
+      window.alert(`You must enter ${size*size} letters (a-z, no symbols allowed)`);
+    } else {
+      const newValues = [];
+
+      for (let i = 0; i < input.length; i++) {
+        newValues.push(input.charAt(i));
+      }
+
+      this.setState({
+        values: newValues,
+        solutions: []
+      });
+    }
   }
 
   render() {
     const { size, values, solutions } = this.state;
 
     return (
-      <div className="App">
+      <div className="app">
         <h1>Boggle</h1>
 
         <Board size={size} values={values} />
 
         <button onClick={this.solve}>Solve</button>
+        <button onClick={this.edit}>Edit Board</button>
 
         <Solutions words={solutions} />
       </div>

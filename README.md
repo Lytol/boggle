@@ -54,6 +54,10 @@ Discussion Points
 - Tradeoffs of backend vs front-end only
 - Avoiding blocking in main thread (worker, etc)
 - Duplicates (not revisiting letters, but multiple paths for the same word)
+- Using a Trie for the dictionary (to shortcut graph traversal)
+- What I Didn't Do
+  * Responsive
+  * Unit / integration testing
 
 
 

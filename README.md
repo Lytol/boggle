@@ -29,10 +29,23 @@ Rules
 TODO
 ----
 
-- Basic interface for creating the board / grid
+- Generate random characters for board on start
+- Show the board
+- Allow users to edit the board
 - Dictionary for testing words
 - Solution generation
 - Deploy
+
+- Prettier error handling on invalid board
+- Responsive
+
+
+Notes
+-----
+
+- Not using tests due to time constraints, might add if have time
+- Just using basic CSS with BEM, no time for more advanced organization/tools
+- How much do we care about browser compatibility? (CSS Grid)
 
 
 References

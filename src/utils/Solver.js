@@ -1,19 +1,16 @@
+import Dictionary from './Dictionary';
+
 class Solver {
+  static MinLength = 3;
+
   constructor(size, values) {
     this.size = size;
     this.values = values;
 
     this.matrix = this._buildMatrix(size, values);
-  }
 
-  words() {
-    const words = [];
-
-    this.search((word) => {
-      words.push(word);
-    })
-
-    return words;
+    // TODO: Perhaps pass this in for DI purposes
+    this.dictionary = new Dictionary();
   }
 
   // This function will call `fn` for each found word, passing
@@ -29,15 +26,18 @@ class Solver {
   }
 
   _searchUtil(fn, x, y, prefix, visited) {
-    const newPrefix = prefix + this.matrix[x][y];
+    const word = prefix + this.matrix[x][y];
     visited[x][y] = true
-    fn(newPrefix)
+
+    if (word.length >= Solver.MinLength && this.dictionary.hasWord(word)) {
+      fn(word)
+    }
 
     // Recursively call with every adjacent node (that isn't out of range or visited already)
     for (let i = x-1; i <= x+1; i++) {
       for (let j = y-1; j <= y+1; j++) {
         if (i >= 0 && i < this.size && j >= 0 && j < this.size && !visited[i][j]) {
-          this._searchUtil(fn, i, j, newPrefix, visited);
+          this._searchUtil(fn, i, j, word, visited);
         }
       }
     }

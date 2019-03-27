@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const readline = require('readline');
+
+const INPUT_PATH = './src/db/words';
+const OUTPUT_PATH = './src/db/words.js';
+
+// Read all words from source
+const inputFile = fs.createReadStream(INPUT_PATH);
+const reader = readline.createInterface({ input: inputFile });
+const words = [];
+
+reader.on('line', (word) => {
+  words.push(word);
+});
+
+reader.on('close', () => {
+  let output = `export default [\n`;
+
+  words.forEach((word) => {
+    // Only include lowercase with no symbols
+    if (word.match(/^[a-z]+$/)) {
+      output += `"${word}",\n`;
+    }
+  });
+
+  output += "]\n";
+
+  // Output words to javascript file
+  fs.writeFile(OUTPUT_PATH, output, (err) => {
+    if (err) throw err;
+
+    console.log(`Dictionary generated to ${OUTPUT_PATH} | ${words.length} words`);
+  });
+});

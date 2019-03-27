@@ -29,15 +29,14 @@ Rules
 TODO
 ----
 
-- Generate random characters for board on start
 - Allow users to edit the board
-- Dictionary for testing words
-- Solution generation
 - Deploy
 
+- Downcase all letters
 - Prettier error handling on invalid board
 - Responsive
 - Clear / Reset button for solutions
+- Organize CSS better
 
 
 Notes
@@ -45,7 +44,17 @@ Notes
 
 - Not using tests due to time constraints, might add if have time
 - Just using basic CSS with BEM, no time for more advanced organization/tools
-- How much do we care about browser compatibility? (CSS Grid)
+- How much do we care about browser compatibility? (CSS Flex, Map, etc)
+- Javascript Map: BTree vs Hash?
+
+
+Discussion Points
+-----------------
+
+- Tradeoffs of backend vs front-end only
+- Avoiding blocking in main thread (worker, etc)
+- Duplicates (not revisiting letters, but multiple paths for the same word)
+
 
 
 References
@@ -53,3 +62,6 @@ References
 
 - <https://en.wikipedia.org/wiki/Boggle>
 - MDN for Javascript docs where appropriate (inevitable *shrug*)
+- [Create React App](https://facebook.github.io/create-react-app/)
+- [NodeJS File documentation](https://nodejs.org/api/fs.html)
+- [NodeJS Readline documentation](https://nodejs.org/api/readline.html)

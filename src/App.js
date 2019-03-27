@@ -21,9 +21,16 @@ class App extends Component {
     const { size, values } = this.state;
 
     const solver = new Solver(size, values);
-    const words = solver.words();
 
-    console.log(words);
+    let words = [];
+
+    solver.search((word) => {
+      words.push(word);
+    });
+
+    console.log(`Words found: ${words.length}`);
+
+    this.setState({ solutions: words });
   }
 
   render() {
